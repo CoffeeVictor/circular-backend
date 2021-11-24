@@ -15,4 +15,11 @@ model Location {
   latitude Float
   longitude Float
   created_at DateTime @default(now())
+  accuracy Float?
+  origin Origin @default(GPS)
+}
+
+enum Origin {
+  GPS
+  WIFI
 }
