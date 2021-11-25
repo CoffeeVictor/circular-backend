@@ -1,12 +1,14 @@
-import { PrismaClient } from '@prisma/client';
-import express, { Request, Response } from 'express';
 import { Location } from '.prisma/client';
+import { PrismaClient } from '@prisma/client';
 import axios from 'axios';
+import cors from 'cors';
+import express, { Request, Response } from 'express';
 
 const app = express();
 const prisma = new PrismaClient();
 
 app.use(express.json());
+app.use(cors());
 
 interface IGoogleLocation {
 	location: {
